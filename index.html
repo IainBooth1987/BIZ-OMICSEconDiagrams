@@ -1700,41 +1700,41 @@ function cpfDiagram() {
   //
   // Gains from trade = shaded region between CPF and PPF, right of specialisation
   return `<svg viewBox="0 0 220 168" xmlns="http://www.w3.org/2000/svg">
-    ${miAx(28,148,212,16,'Cloth (X)','Wheat (Y)')}
+    ${axes(28,148,212,16,'Cloth (X)','Wheat (Y)')}
     <!-- Axis tick labels -->
-    <text x="140" y="157" fill="${MU}" font-size="6" text-anchor="middle">1000</text>
-    <text x="209" y="157" fill="${MU}" font-size="6" text-anchor="middle">1600</text>
-    <text x="22" y="19" fill="${MU}" font-size="6" text-anchor="end">200</text>
-    <text x="22" y="85" fill="${MU}" font-size="6" text-anchor="end">100</text>
+    <text x="140" y="157" fill="${C.label}" font-size="6" text-anchor="middle">1000</text>
+    <text x="209" y="157" fill="${C.label}" font-size="6" text-anchor="middle">1600</text>
+    <text x="22" y="19" fill="${C.label}" font-size="6" text-anchor="end">200</text>
+    <text x="22" y="85" fill="${C.label}" font-size="6" text-anchor="end">100</text>
     <!-- Gains from trade region: shaded triangle between CPF and PPF -->
     <polygon points="28,16 143,148 212,148" fill="rgba(16,185,129,0.15)"/>
     <!-- PPF: Country A without trade — (0,200Y) to (1000X,0) -->
     <line x1="28" y1="16" x2="143" y2="148"
-          stroke="${MU}" stroke-width="2.5" fill="none"/>
-    <text x="148" y="152" fill="${MU}" font-size="8" font-weight="bold">PPF</text>
+          stroke="${C.muted}" stroke-width="2.5" fill="none"/>
+    <text x="148" y="152" fill="${C.muted}" font-size="8" font-weight="bold">PPF</text>
     <!-- CPF: through specialisation point at world price ratio 1Y=8X — (0,200Y) to (1600X,0) -->
     <line x1="28" y1="16" x2="212" y2="148"
-          stroke="${S}" stroke-width="2.5" fill="none" stroke-dasharray="6,3"/>
-    <text x="208" y="143" fill="${S}" font-size="8" font-weight="bold">CPF</text>
+          stroke="${C.lras}" stroke-width="2.5" fill="none" stroke-dasharray="6,3"/>
+    <text x="208" y="143" fill="${C.lras}" font-size="8" font-weight="bold">CPF</text>
     <!-- Terms of trade annotation on CPF slope -->
-    <text x="170" y="115" fill="${S}" font-size="6.5" text-anchor="middle">ToT: 1Y = 8X</text>
+    <text x="170" y="115" fill="${C.lras}" font-size="6.5" text-anchor="middle">ToT: 1Y = 8X</text>
     <!-- Autarky point: (500X, 100Y) — pre-trade consumption on PPF -->
-    <circle cx="85.5" cy="82" r="4" fill="white" stroke="${MU}" stroke-width="1.8"/>
-    <text x="62" y="78" fill="${MU}" font-size="7" font-weight="bold">Autarky</text>
-    <line x1="69" y1="79" x2="81" y2="82" stroke="${MU}" stroke-width="1"/>
+    <circle cx="85.5" cy="82" r="4" fill="white" stroke="${C.muted}" stroke-width="1.8"/>
+    <text x="62" y="78" fill="${C.muted}" font-size="7" font-weight="bold">Autarky</text>
+    <line x1="69" y1="79" x2="81" y2="82" stroke="${C.muted}" stroke-width="1"/>
     <!-- Specialisation point: (0X, 200Y) — full spec in wheat -->
-    <circle cx="28" cy="16" r="4" fill="${S}"/>
-    <text x="33" y="14" fill="${S}" font-size="7" font-weight="bold">Specialise</text>
-    <text x="33" y="22" fill="${S}" font-size="6.5">(200Y, 0X)</text>
+    <circle cx="28" cy="16" r="4" fill="${C.lras}"/>
+    <text x="33" y="14" fill="${C.lras}" font-size="7" font-weight="bold">Specialise</text>
+    <text x="33" y="22" fill="${C.lras}" font-size="6.5">(200Y, 0X)</text>
     <!-- Consumption point: (960X, 80Y) — beyond PPF, on CPF -->
-    <circle cx="138.4" cy="95.2" r="4.5" fill="${LC}"/>
-    <text x="143" y="89" fill="${LC}" font-size="7" font-weight="bold">Consumption</text>
-    <text x="143" y="97" fill="${LC}" font-size="6.5">(80Y + 960X)</text>
+    <circle cx="138.4" cy="95.2" r="4.5" fill="${C.teal}"/>
+    <text x="143" y="89" fill="${C.teal}" font-size="7" font-weight="bold">Consumption</text>
+    <text x="143" y="97" fill="${C.teal}" font-size="6.5">(80Y + 960X)</text>
     <!-- Dashed guides to consumption point -->
-    <line x1="28" y1="95.2" x2="138.4" y2="95.2" stroke="${LC}" stroke-width="1" stroke-dasharray="3,2"/>
-    <line x1="138.4" y1="95.2" x2="138.4" y2="148" stroke="${LC}" stroke-width="1" stroke-dasharray="3,2"/>
-    <text x="22" y="98" fill="${LC}" font-size="6" text-anchor="end">80</text>
-    <text x="135" y="157" fill="${LC}" font-size="6" text-anchor="middle">960</text>
+    <line x1="28" y1="95.2" x2="138.4" y2="95.2" stroke="${C.teal}" stroke-width="1" stroke-dasharray="3,2"/>
+    <line x1="138.4" y1="95.2" x2="138.4" y2="148" stroke="${C.teal}" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="22" y="98" fill="${C.teal}" font-size="6" text-anchor="end">80</text>
+    <text x="135" y="157" fill="${C.teal}" font-size="6" text-anchor="middle">960</text>
     <!-- Gains from trade label in shaded region -->
     <text x="162" y="135" fill="rgba(16,185,129,0.9)" font-size="6.5" text-anchor="middle" font-weight="bold">Gains</text>
     <text x="162" y="143" fill="rgba(16,185,129,0.9)" font-size="6.5" text-anchor="middle" font-weight="bold">from trade</text>
@@ -2740,7 +2740,7 @@ const maCards = [
     diagramType:'compAdvGrid',
     explanation:'With numerical examples, comparative advantage is determined by comparing opportunity costs across countries. Country A: produces 200Y or 1,000X (OC of Y = 5X). Country B: produces 100Y or 1,500X (OC of Y = 15X). A has comparative advantage in Y (OC of 5X < B\'s 15X); B has comparative advantage in X (OC = 1/15Y vs A\'s 1/5Y). Under full specialisation: 200Y + 1,500X > autarky production of ~150Y + ~1,250X. Both countries gain by trading within the terms of trade range (between the two OC ratios). Evaluation: the gains from trade are real but unevenly distributed within countries — workers in the sector where the country has comparative disadvantage face unemployment and wage pressure, creating domestic winners and losers even when the aggregate gain is positive. Links to: PPF, trade policy, trade creation, protectionism.',
     keyPoint:'Compare OC (not absolute productivity) to find where each country should specialise. Both gain if each trades within the terms of trade range. Evaluation: the distribution of gains from trade matters — the Stolper-Samuelson theorem predicts that the scarce factor of production (typically low-skill labour in advanced economies) loses from trade, creating political pressure for protectionism. UK example: Ricardo\'s original illustration (UK cloth, Portuguese wine) — even if Portugal was better at both, both gained from specialisation. Modern equivalent: UK exports high-value services, imports manufactured goods. Links: Comparative Advantage PPF, Trade Creation, Trade Policy, Globalisation.' },
-    {category:'trade', catLabel:'Trade Theory & Policy',
+    {id:59.5, category:'trade', catLabel:'Trade Theory & Policy',
     concept:'Gains from Trade: CPF',
     diagramType:'cpf',
     explanation:'The Consumption Possibility Frontier (CPF) shows the combinations of goods a country can consume after specialising and trading at the world price ratio (terms of trade). Without trade, consumption is limited to points on or inside the PPF. With trade, a country can consume beyond its PPF — the CPF lies outside the PPF whenever the world price ratio (terms of trade) differs from the domestic opportunity cost ratio. Using the same numbers as the comparative advantage card: Country A (UK) has a PPF of 200Y (wheat) or 1,000X (cloth) — a domestic OC of 1Y = 5X. Country B (Portugal) has OC of 1Y = 15X, so A has comparative advantage in wheat (Y). If the terms of trade settle at 1Y = 8X (between the two OC ratios), A fully specialises at (200Y, 0X) and trades 120Y for 960X — reaching the consumption point (80Y, 960X), which lies clearly outside the PPF. The CPF runs from the specialisation point through the world price ratio; its x-intercept (1,600X) exceeds the PPF x-intercept (1,000X), and its slope (-1/8) is flatter than the PPF slope (-1/5), creating a triangular gains-from-trade region between the two frontiers. Key assumptions: full specialisation (simplification — partial specialisation also generates gains), constant returns (linear PPF), and terms of trade between the two domestic OC ratios. Evaluation: the size of the gains depends on the terms of trade — the closer the ToT to A\'s own OC (1Y=5X), the smaller A\'s gains and the larger B\'s; the closer to B\'s OC (1Y=15X), the larger A\'s gains. In practice terms of trade are determined by relative supply and demand in world markets. Links to: comparative advantage, PPF, absolute advantage, terms of trade.',
@@ -3797,18 +3797,18 @@ function srCostsD(){
   // MC cubic:  M30.8,87.3 C49.8,105.8 68.8,124.3 97.4,115.9 C125.9,107.4 163.8,71.9 201.9,36.4
   // AFC hyperbola: M29.8,113.6 C30.8,130.9 31.8,148.0 54.6,134.2 C77.3,120.5 121.8,75.6 166.3,30.7
   return `<svg viewBox="0 0 220 168">${miAx(28,148,212,16,'Output','Costs')}
-    <!-- AVC: U-shaped (falls then rises) — sits below ATC by AFC gap -->
+    <!-- MC: rises steeply — cuts AVC and ATC at their minima -->
     <path d="M29.8 113.6 C30.8 130.9 31.8 148.0 54.6 134.2 C77.3 120.5 121.8 75.6 166.3 30.7" stroke="${D}" stroke-width="2.5" fill="none"/>
-    <text x="168" y="29" fill="${D}" font-size="7.5" font-weight="bold">AVC</text>
-    <!-- AFC: rectangular hyperbola, always falling -->
-    <path d="M34.0 55.8 C38.6 83.6 43.1 111.3 70.9 126.3 C98.7 141.2 149.9 143.3 201.0 145.4" stroke="${R}" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
-    <text x="202" y="143" fill="${R}" font-size="7.5" font-weight="bold">AFC</text>
-    <!-- ATC: U-shaped, wider, sits above AVC -->
+    <text x="168" y="29" fill="${D}" font-size="7.5" font-weight="bold">MC</text>
+    <!-- AVC: U-shaped, sits below ATC, flattens toward right -->
+    <path d="M34.0 55.8 C38.6 83.6 43.1 111.3 70.9 126.3 C98.7 141.2 149.9 143.3 201.0 145.4" stroke="${R}" stroke-width="2.5" fill="none"/>
+    <text x="202" y="148" fill="${R}" font-size="7.5" font-weight="bold">AVC</text>
+    <!-- ATC: wide U-shape, highest curve, sits above AVC -->
     <path d="M33.5 20.2 C58.9 53.2 84.3 86.2 112.5 86.2 C140.8 86.3 171.9 53.4 202.9 20.6" stroke="${LC}" stroke-width="2.5" fill="none"/>
-    <text x="197" y="39" fill="${LC}" font-size="7.5" font-weight="bold">ATC</text>
-    <!-- MC: narrower U, cuts AVC and ATC at their minimums -->
-    <path d="M30.8 87.3 C49.8 105.8 68.8 124.3 97.4 115.9 C125.9 107.4 163.8 71.9 201.9 36.4" stroke="${S}" stroke-width="2.5" fill="none"/>
-    <text x="195" y="37" fill="${S}" font-size="7.5" font-weight="bold">MC</text>
+    <text x="204" y="22" fill="${LC}" font-size="7.5" font-weight="bold">ATC</text>
+    <!-- AFC: rectangular hyperbola, always falling (dashed) -->
+    <path d="M30.8 87.3 C49.8 105.8 68.8 124.3 97.4 115.9 C125.9 107.4 163.8 71.9 201.9 36.4" stroke="${S}" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+    <text x="195" y="37" fill="${S}" font-size="7.5" font-weight="bold">AFC</text>
   </svg>`;
 }
 
@@ -3909,7 +3909,7 @@ function lracD(sh){
     // ATC1 (lower U, after external EoS): M32.7,66.1 C58.2,99.1 83.6,132.1 111.8,132.2 C140.0,132.3 171.2,99.4 202.2,66.5
     // Both curves are #000000 in SVG → use theme colours. ATC=MU (original), ATC1=LC (lower).
     nt='External EoS: industry growth shifts whole LRAC down. All firms benefit.';
-    ex=`<defs>${miArw('arwUp','${LC}')}</defs>
+    ex=`<defs>${miArw('arwUp',LC)}</defs>
     <!-- ATC1: lower U-shaped curve (external EoS shifts entire curve down) -->
     <path d="M32.7 66.1 C58.2 99.1 83.6 132.1 111.8 132.2 C140.0 132.3 171.2 99.4 202.2 66.5" stroke="${LC}" stroke-width="2.5" fill="none"/>
     <text x="194.4" y="84.3" fill="${LC}" font-size="8" font-weight="bold">ATC1</text>
@@ -4682,26 +4682,26 @@ function envelopeD(){
   // SRAC3: tangent at (168,148), both arms above LRAC ✓  M126 126 C143 152 155 150 168 148 C180 150 192 152 208 132
   return `<svg viewBox="0 0 220 168" xmlns="http://www.w3.org/2000/svg">
     ${miAx(28,148,212,16,'Q','AC')}
-    <!-- SRAC1: small plant — pronounced U, tangent on steep section of LRAC -->
-    <path d="M28 65 C38 99 48 98 55 97 C64 98 76 100 90 44"
+    <!-- SRAC1: starts above LRAC, hugs down, tangent at (55,97.6), rises right -->
+    <path d="M35 44 C38 64 50 89 55 97.6 C62 96 70 80 82 40"
           stroke="${D}" stroke-width="1.8" fill="none" stroke-dasharray="4,2"/>
-    <text x="84" y="42" fill="${D}" font-size="7.5" font-weight="bold">SRAC₁</text>
-    <!-- SRAC2: medium plant — pronounced U, tangent on transitioning section -->
-    <path d="M70 88 C86 140 100 138 110 137 C120 138 134 140 152 92"
+    <text x="76" y="37" fill="${D}" font-size="7.5" font-weight="bold">SRAC₁</text>
+    <!-- SRAC2: starts above LRAC, hugs down, tangent at (110,134.4), rises right -->
+    <path d="M75 108 C88 127 102 132 110 134.4 C122 134 138 125 158 88"
           stroke="${S}" stroke-width="1.8" fill="none" stroke-dasharray="4,2"/>
-    <text x="146" y="90" fill="${S}" font-size="7.5" font-weight="bold">SRAC₂</text>
-    <!-- SRAC3: large plant — pronounced U, tangent on flat section -->
-    <path d="M122 110 C140 144 155 143 168 143 C181 143 196 144 212 112"
+    <text x="150" y="86" fill="${S}" font-size="7.5" font-weight="bold">SRAC₂</text>
+    <!-- SRAC3: left arm follows LRAC, tangent at (168,142.5), rises right -->
+    <path d="M120 125 C135 138 155 142 168 142.5 C182 142 196 135 210 108"
           stroke="${R}" stroke-width="1.8" fill="none" stroke-dasharray="4,2"/>
-    <text x="206" y="110" fill="${R}" font-size="7.5" font-weight="bold">SRAC₃</text>
-    <!-- LRAC: hyperbolic envelope, capped above x-axis -->
+    <text x="204" y="106" fill="${R}" font-size="7.5" font-weight="bold">SRAC₃</text>
+    <!-- LRAC: hyperbolic envelope drawn on top -->
     <path d="M28 22 C32 62 52 105 82 125 C112 140 155 143 212 144"
           stroke="${LC}" stroke-width="2.8" fill="none"/>
     <text x="196" y="140" fill="${LC}" font-size="8" font-weight="bold">LRAC</text>
     <!-- Tangency dots -->
-    <circle cx="55" cy="97" r="3" fill="${D}"/>
-    <circle cx="110" cy="137" r="3" fill="${S}"/>
-    <circle cx="168" cy="143" r="3" fill="${R}"/>
+    <circle cx="55" cy="97.6" r="3" fill="${D}"/>
+    <circle cx="110" cy="134.4" r="3" fill="${S}"/>
+    <circle cx="168" cy="142.5" r="3" fill="${R}"/>
   </svg>`;
 }
 
@@ -5146,10 +5146,12 @@ function renderBank(cards, gridId, seenSet, diagFn, filterCat, searchTerm){
     wrap.className = 'cw cat-' + card.category;
     const fc = document.createElement('div');
     fc.className = 'fc' + (seenSet.has(card.id) ? ' flipped' : '');
+    // Diagram placeholder — only render SVG on first flip to avoid memory crash on iOS
+    const diagPlaceholder = '<div class="cdiag-ph" style="display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:11px;">Tap to reveal</div>';
     fc.innerHTML =
       '<div class="fc-f">' +
         '<div class="ch"><span class="ccat">' + card.catLabel + '</span><span class="cid">#' + card.id + '</span></div>' +
-        '<div class="cdiag">' + diagFn(card) + '</div>' +
+        '<div class="cdiag">' + diagPlaceholder + '</div>' +
         '<div class="ctit"><h3>' + card.concept + '</h3></div>' +
       '</div>' +
       '<div class="fc-b">' +
@@ -5160,7 +5162,14 @@ function renderBank(cards, gridId, seenSet, diagFn, filterCat, searchTerm){
         '</div>' +
         '<div class="bkey"><strong>Key Point</strong>' + card.keyPoint + '</div>' +
       '</div>';
+    let diagRendered = false;
     fc.addEventListener('click', function(){
+      // Render diagram on first interaction
+      if (!diagRendered) {
+        const diagEl = fc.querySelector('.cdiag');
+        if (diagEl) diagEl.innerHTML = diagFn(card);
+        diagRendered = true;
+      }
       fc.classList.toggle('flipped');
       seenSet.add(card.id);
     });
